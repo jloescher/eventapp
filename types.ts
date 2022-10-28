@@ -1,3 +1,5 @@
+import { Component } from "react"
+
 export type Event = {
   id: string,
   title: string,
@@ -15,4 +17,9 @@ export type ListDetailsProps = {
 export type DateFilter = {
   year: Number
   month: Number | any
+}
+
+export type ButtonProps = {
+  children: any,
+  link: string
 }
