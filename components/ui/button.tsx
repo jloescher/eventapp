@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import { ButtonProps } from '../../types'
 import classes from './button.module.css'
 
-const Button = (props: ButtonProps) => {
-  return (
-    <Link className={classes.btn} href={props.link}>{props.children}</Link>
-  )
+type Props = {
+  onClick?: string,
+  children?: ReactNode,
+  link?: string
+}
+
+const Button = (props: Props) => {
+  if (props.link) {
+    return (
+      <Link className={classes.btn} href={props.link}>{props.children}</Link>
+    )
+  }
+  
+  return <button className={classes.btn}>{props.children}</button>
 }
 
 Button.propTypes = {}

@@ -1,10 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Event, ListDetailsProps } from '../../types'
 import EventItem from './event-item'
 import classes from './event-list.module.css'
 
-const EventList = (props: ListDetailsProps) => {
+type Event = {
+  id: string,
+  title: string,
+  description: string,
+  location: string,
+  date: string,
+  image: string,
+  isFeatured: Boolean,
+}
+
+type Props = {
+  items: Array<Event>
+}
+
+const EventList = (props: Props) => {
   const { items } = props
 
   return (

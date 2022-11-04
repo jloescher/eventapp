@@ -1,4 +1,7 @@
-import { DateFilter } from './types'
+type DateFilter = {
+  year: Number
+  month: Number | any
+}
 
 const DUMMY_EVENTS = [
   {

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Event } from '../../types'
 import Image from 'next/image'
 import Button from '../ui/button'
 import DateIcon from '../icons/date-icon'
@@ -8,8 +7,17 @@ import AddressIcon from '../icons/address-icon'
 import ArrowRightIcon from '../icons/arrow-right-icon'
 import classes from './event-item.module.css'
 
+type Props = {
+  id: string,
+  title: string,
+  description: string,
+  location: string,
+  date: string,
+  image: string,
+  isFeatured: Boolean,
+}
 
-const EventItem = (props: Event) => {
+const EventItem = (props: Props) => {
   const { title, image, date, location, id } = props
 
   const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
